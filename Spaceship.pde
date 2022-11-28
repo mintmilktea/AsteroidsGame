@@ -33,46 +33,7 @@ class Spaceship extends Floater{
    return myPointDirection;
   }
   
-  public void deccelerate(){
-   double angle = Math.atan(myYspeed/myXspeed);
-    
-    if (myXspeed < 0) {
-      if (angle < 0) {
-        angle += Math.PI;
-      } else if (angle > 0) {
-        angle = Math.PI - angle;
-      }
-    }
-    
-    if (myXspeed > 0) {
-      myXspeed -= Math.cos(angle);
-      
-     if (myXspeed < 0) {
-       myXspeed = 0;
-     }
-    } else if (myXspeed < 0) {
-      myXspeed -= Math.cos(angle);
-      
-      if (myXspeed > 0) {
-        myXspeed = 0;
-      }
-    }
-    
-    if (myYspeed > 0) {
-      myYspeed -= Math.sin(angle);
-      
-     if (myYspeed < 0) {
-       myYspeed = 0;
-     }
-    } else if (myYspeed < 0) {
-      myYspeed -= Math.sin(angle) * ((myXspeed < 0) ? -1 : 1);
-      
-      if (myYspeed > 0) {
-        myYspeed = 0;
-      }
-    }
-  }
-
+  
   public void hyperspace(){
     myYspeed = myXspeed = 0;
     myCenterX = Math.random()*500;
