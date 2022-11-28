@@ -41,7 +41,7 @@ public void draw(){
   player.move();
  
   if(!keyPressed){
-    player.deccelerate();
+    player.resetSpeed();
   }
   
   
